@@ -75,13 +75,13 @@ public class Interfaz extends javax.swing.JFrame {
 
         TituloT.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         TituloT.setForeground(new java.awt.Color(0, 102, 0));
-        TituloT.setText("Tears of the Kingdom");
-        jPanel1.add(TituloT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, 40));
+        TituloT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/TearsFondo (1)_1.png"))); // NOI18N
+        jPanel1.add(TituloT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 200, 180));
 
         TituloS.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         TituloS.setForeground(new java.awt.Color(0, 0, 204));
-        TituloS.setText("Street Fighter 6");
-        jPanel1.add(TituloS, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+        TituloS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/StreetFondo (2).png"))); // NOI18N
+        jPanel1.add(TituloS, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, 150));
 
         Vs.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Vs.setForeground(new java.awt.Color(204, 0, 102));
@@ -89,39 +89,39 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1.add(Vs, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
 
         H2.setText("Habilidades:");
-        jPanel1.add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, -1, -1));
-        jPanel1.add(Habilidades2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 110, 20));
+        jPanel1.add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+        jPanel1.add(Habilidades2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 110, 20));
 
         H1.setText("Habilidades:");
-        jPanel1.add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
-        jPanel1.add(Habilidades1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 110, 20));
+        jPanel1.add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
+        jPanel1.add(Habilidades1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 110, 20));
 
         Pvida2.setText("Puntos de vida:");
-        jPanel1.add(Pvida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, -1, -1));
-        jPanel1.add(Puntos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 110, 20));
+        jPanel1.add(Pvida2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, -1, -1));
+        jPanel1.add(Puntos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 110, 20));
 
         Pvida1.setText("Puntos de vida:");
-        jPanel1.add(Pvida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
-        jPanel1.add(Puntos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 110, 20));
+        jPanel1.add(Pvida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+        jPanel1.add(Puntos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 110, 20));
 
         F1.setText("Fuerza:");
-        jPanel1.add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
-        jPanel1.add(Fuerza1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 110, 20));
+        jPanel1.add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, -1, -1));
+        jPanel1.add(Fuerza1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 110, 20));
 
         F2.setText("Fuerza:");
-        jPanel1.add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, -1, -1));
-        jPanel1.add(Fuerza2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 110, 20));
+        jPanel1.add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, -1, -1));
+        jPanel1.add(Fuerza2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 110, 20));
 
         A1.setText("Agilidad:");
-        jPanel1.add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
-        jPanel1.add(Agilidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 110, 20));
+        jPanel1.add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, -1, -1));
+        jPanel1.add(Agilidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 110, 20));
 
         A2.setText("Agilidad:");
-        jPanel1.add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 460, -1, -1));
-        jPanel1.add(Agilidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 460, 110, 20));
+        jPanel1.add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, -1, -1));
+        jPanel1.add(Agilidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 440, 110, 20));
 
         TextGanador.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        TextGanador.setForeground(new java.awt.Color(204, 0, 102));
+        TextGanador.setForeground(new java.awt.Color(255, 255, 255));
         TextGanador.setText("Ganador:");
         jPanel1.add(TextGanador, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, -1, -1));
         jPanel1.add(Ganador, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 130, 30));
@@ -131,6 +131,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         Jugador2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jPanel1.add(Jugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 270, 40));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2 (1).jpg"))); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 540));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 540));
