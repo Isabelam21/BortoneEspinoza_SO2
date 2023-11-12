@@ -26,7 +26,7 @@ public class Interfaz extends javax.swing.JFrame {
 
             i++;
 
-            Node node = new Node();
+//            Node node = new Node();
 
             if (i==10) { break;}
 

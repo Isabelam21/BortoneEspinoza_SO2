@@ -1,106 +1,152 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package bortoneespinoza_so2;
-
 /**
  *
- * @author isabe
+ * @author Giubo
  */
+public class Queue<T> {
 
-//Cola --> Queue
-public class Queue {
+    public Node<T> pFirst;
+    public Node<T> pLast;
+    public String name;
+    public int size;
+    public int priority;
 
-    //Atributos
-    private Node head;
-    private Node tail;
-    private int size;
-
-    /**
-     * construir
-     * @author Isabela Espinoza
-     */
-    public Queue() {
-        this.head = this.tail = null;
+    public Queue(String nombre, int priority) {
+        this.pFirst = null;
+        this.pLast = null;
+        this.name = nombre;
         this.size = 0;
+        this.priority = priority;
     }
 
-    /**
-     * Si esta vacia
-     * @author Isabela Espinoza
-     * @return true or false
-     */
-    public boolean isEmpty() {
-        return head == null;
+    // Getters and setters
+    public Node<T> getpFirst() {
+        return pFirst;
     }
 
-    /**
-     * Para vaciar cola
-     * @author Isabela Espinoza
-     */
-    public void empty() {
-        this.head = this.tail = null;
-        this.size = 0;
+    public String getName() {
+        return name;
     }
 
+    public int getSize() {
+        return size;
+    }
 
-    /**
-     * Encolar
-     * @author Isabela Espinoza
-     * @param nuevo 
-     */
-    public void queue(Node nuevo) {
-        System.out.println("encolando "+nuevo.getValue());
-        if (this.isEmpty()) {
-            head = tail = nuevo;
+    public int getPriority() {
+        return priority;
+    }
+
+    public Node<T> getpLast() {
+        return pLast;
+    }
+
+    public void setpFirst(Node<T> pFirst) {
+        this.pFirst = pFirst;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public void setpLast(Node<T> pLast) {
+        this.pLast = pLast;
+    }
+
+    // Funciones
+    public Node<T> last() {
+        if (isEmpty()) {
+            return null;
         } else {
-            tail.setNext(nuevo);
-            tail = nuevo;
+            Node<T> pAux;
+            pAux = getpFirst();
+            while (pAux.pnext != null) {
+                pAux = next(pAux);
+            }
+            return pAux;
+        }
+    }
+
+    public boolean isEmpty() {
+        return pFirst == null;
+    }
+
+    public Node next(Node<T> pValor) {
+        if (pValor != null) {
+            pValor = pValor.pnext;
+            return pValor;
+        } else {
+            return null;
+        }
+    }
+
+    public void enqueue(T data_personaje, Node<T> pValor) {
+        Node<T> pNew = new Node<T>(data_personaje);
+        if (isEmpty()) {
+            pFirst = pNew;
+        } else {
+            pNew.pnext = pValor.pnext;
+            pValor.pnext = pNew;
         }
         size++;
     }
 
-    /**
-     * Desencolar
-     * @author Isabela Espinoza
-     * @return 
-     */
-    public Node dequeue() {
-        System.out.println("size es "+size+" head value "+head.getValue());
-        Node node = null;
-        if (this.isEmpty()) {
-            System.out.println("La cola esta vacia.");
-        } else if (size == 1) {
-            node = new Node();
-            System.out.println("head.getValue( "+head.getValue());
-            node.setValue(head.getValue());
-            this.empty();
-        } else {
-            node = head;
-            head = head.getNext();
-            size--;
-        }
-        return node;
-    }
-
-
-    /**
-     * Imprimir
-     * @author Isabela Espinoza
-     * @return imprime
-     */
-    public String print() {
-        if (!this.isEmpty()) {
-            String printQueue = "";
-            for (int i = 0; i < size; i++) {
-                Node actual = head;
-                dequeue();
-                printQueue += actual.getElement() + ",";
-                queue(actual);
+    public Node<T> dequeue() {
+        if (!isEmpty()) {
+            Node<T> removedNode = pFirst;
+            pFirst = pFirst.pnext;
+            if (pFirst == null) {
+                // Si se eliminó el último nodo, actualiza pLast a null
+                pLast = null;
             }
-            return printQueue;
+            size--;
+            return removedNode;
+        } else {
+            return null;
         }
-        return null;
     }
+
+    public void enqueue_last(T data_personaje) {
+        Node<T> pNew = new Node<T>(data_personaje);
+
+        if (isEmpty()) {
+            // Si la cola está vacía, el nuevo nodo es tanto el primero como el último
+            pFirst = pNew;
+            pLast = pNew;
+        } else {
+            // Agrega el nuevo nodo al final de la cola y actualiza pLast
+            pLast.pnext = pNew;
+            pLast = pNew;
+        }
+
+        size++;
+    }
+
+    public String recorrer() {
+        Node<T> pAux;
+        String resultado = "";
+        if (isEmpty()) {
+            resultado = " está vacía";
+
+        } else {
+            pAux = pFirst;
+            while (pAux != null) {
+                pAux = next(pAux);
+            }
+        }
+        return resultado;
+    }
+
 }
