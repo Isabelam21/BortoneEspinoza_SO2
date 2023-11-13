@@ -12,12 +12,13 @@ public class Administrador {
     public Queue<Personaje> colaZeldaNivel1;
     public Queue<Personaje> colaZeldaNivel2;
     public Queue<Personaje> colaZeldaNivel3;
-    public Queue<Personaje> colaZeldaNivel4; // cola refuerzo
+    public Queue<Personaje> colaZeldaNivel4; // cola refuerzo Zelda
     
 
     public Queue<Personaje> colaStreetFighterNivel1;
     public Queue<Personaje> colaStreetFighterNivel2;
     public Queue<Personaje> colaStreetFighterNivel3;
+    public Queue<Personaje> colaStreetFighterNivel4; // cola refuerzo StreetFighter
 
     public Administrador() {
         // Inicializa las colas

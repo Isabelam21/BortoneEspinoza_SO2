@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package bortoneespinoza_so2;
+
 /**
  *
  * @author Giubo
@@ -80,7 +81,9 @@ public class Queue<T> {
     }
 
     public boolean isEmpty() {
+        System.out.println(pFirst);
         return pFirst == null;
+
     }
 
     public Node next(Node<T> pValor) {
@@ -139,11 +142,14 @@ public class Queue<T> {
         String resultado = "";
         if (isEmpty()) {
             resultado = " está vacía";
+            System.out.println(resultado);
 
         } else {
             pAux = pFirst;
             while (pAux != null) {
+                System.out.println(pAux.getData());
                 pAux = next(pAux);
+
             }
         }
         return resultado;

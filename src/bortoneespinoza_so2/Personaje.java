@@ -12,13 +12,13 @@ import java.util.Random;
  */
 public class Personaje {
 
-    private int id;
-    private int nivelPrioridad;
-    private int habilidades;
-    private int puntosVida;
-    private int fuerza;
-    private int agilidad;
-    private int game; // 1 para Zelda y 2 para Street Fighter
+    public int id;
+    public int nivelPrioridad;
+    public int habilidades;
+    public int puntosVida;
+    public int fuerza;
+    public int agilidad;
+    public int game; // 1 para Zelda y 2 para Street Fighter
     public int contador;
 
     public Personaje(int id) {
@@ -28,7 +28,7 @@ public class Personaje {
         this.contador = 0;
     }
 
-    private void asignarNivelPrioridad() {
+    public int asignarNivelPrioridad() {
         // Lógica basada en las habilidades adquiridas
         int totalHabilidades = habilidades + puntosVida + fuerza + agilidad;
 
@@ -39,9 +39,10 @@ public class Personaje {
         } else {
             this.nivelPrioridad = 3; // Prioridad baja
         }
+        return this.nivelPrioridad;
     }
 
-    private void asignarElementos() {
+    public void asignarElementos() {
         Random random = new Random();
         habilidades = (random.nextDouble() <= 0.6) ? 1 : 0;
         puntosVida = (random.nextDouble() <= 0.7) ? 1 : 0;
