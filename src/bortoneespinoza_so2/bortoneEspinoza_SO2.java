@@ -20,7 +20,9 @@ public class bortoneEspinoza_SO2 {
         Personaje personaje3 = new Personaje(3);
         Personaje personaje4 = new Personaje(4);
         Personaje personaje5 = new Personaje(5);
-        cola1.enqueue_last(personaje1.id);
+        Node nodo_personaje1 = new Node(personaje1.id);
+        cola1.enqueue(personaje1.id , nodo_personaje1);
+        System.out.println(nodo_personaje1.getData());
         cola1.recorrer();
         System.out.println(personaje1.asignarNivelPrioridad());
         System.out.println(personaje2.asignarNivelPrioridad());

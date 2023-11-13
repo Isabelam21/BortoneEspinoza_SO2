@@ -81,7 +81,6 @@ public class Queue<T> {
     }
 
     public boolean isEmpty() {
-        System.out.println(pFirst);
         return pFirst == null;
 
     }
