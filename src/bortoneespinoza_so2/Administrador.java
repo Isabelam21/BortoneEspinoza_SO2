@@ -30,7 +30,10 @@ public class Administrador {
         colaStreetFighterNivel2 = new Queue<>("StreetFighterNivel2", 2);
         colaStreetFighterNivel3 = new Queue<>("StreetFighterNivel3", 3);
     }
-
+    
+    public void inicializarPersonajes(){
+        
+    }
 //    public void realizarBatallas() {
 //        // Realiza las batallas según la descripción del proyecto
 //        // ...
