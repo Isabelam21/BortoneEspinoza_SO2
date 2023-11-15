@@ -15,11 +15,11 @@ public class bortoneEspinoza_SO2 {
      */
     public static void main(String[] args) {
         Queue cola1 = new Queue("cola", 1);
-        Personaje personaje1 = new Personaje(1);
-        Personaje personaje2 = new Personaje(2);
-        Personaje personaje3 = new Personaje(3);
-        Personaje personaje4 = new Personaje(4);
-        Personaje personaje5 = new Personaje(5);
+        Personaje personaje1 = new Personaje(1,1);
+        Personaje personaje2 = new Personaje(2,1);
+        Personaje personaje3 = new Personaje(3,2);
+        Personaje personaje4 = new Personaje(4,2);
+        Personaje personaje5 = new Personaje(5,2);
         Node nodo_personaje1 = new Node(personaje1.id);
         cola1.enqueue(personaje1.id , nodo_personaje1);
         System.out.println(nodo_personaje1.getData());

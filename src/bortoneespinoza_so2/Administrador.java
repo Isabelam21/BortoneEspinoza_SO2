@@ -13,6 +13,7 @@ public class Administrador {
     public Queue<Personaje> colaZeldaNivel2;
     public Queue<Personaje> colaZeldaNivel3;
     public Queue<Personaje> colaZeldaNivel4; // cola refuerzo Zelda
+    public int rondas;
 
     public Queue<Personaje> colaStreetFighterNivel1;
     public Queue<Personaje> colaStreetFighterNivel2;
@@ -28,6 +29,18 @@ public class Administrador {
         colaStreetFighterNivel1 = new Queue<>("StreetFighterNivel1", 1);
         colaStreetFighterNivel2 = new Queue<>("StreetFighterNivel2", 2);
         colaStreetFighterNivel3 = new Queue<>("StreetFighterNivel3", 3);
+        
+        this.rondas = 0;
     }
-
+    
+    public void actualizarColas(){
+        rondas++;
+        //Agregar al terminar logica lo de Por cada vez que se actualicen las colas, 
+        //existe un 40% de probabilidades de que el primer personaje en esta cola salga, 
+        //y sea colocado en la cola de prioridad 1.
+    }
+    
+    public void agregarPersonaje(){
+        
+}
 }

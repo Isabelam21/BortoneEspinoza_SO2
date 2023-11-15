@@ -15,9 +15,11 @@ public class InteligenciaArtificial {
     public Queue ganadores;
     public Personaje personaje_zelda;
     public Personaje personaje_street;
-    
+    public boolean finalizado; // Variable booleana para saber si ya se termino el combate
+
     public InteligenciaArtificial() {
         Queue ganadores = new Queue("cola", 1);
+        this.finalizado = false;
     }
 
     //Procesar batalla
@@ -34,14 +36,14 @@ public class InteligenciaArtificial {
                     mostrarResultado(ganador, (ganador == zelda) ? streetFighter : zelda);
                     //Administrador.lista_ganadores();
                     //Administrador.eliminar();
-                    //ganadores.enqueue_last(ganador.getId());
+                    ganadores.enqueue_last(ganador.getId());
 
                 }
 
             } else if (probabilidad <= 0.67) {
                 //Administrador.desencolar_cola_actual();
                 //Administrador.encolar_cola1();
-                
+
                 System.out.println("Empate en el combate.");
 
             } else {
@@ -50,12 +52,13 @@ public class InteligenciaArtificial {
                 //Administrador.desencolar_cola_actual();
                 //Administrador.encolar_refuerzo();
             }
+            this.finalizado = true;
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-    
+
     // Logica para determinafr el ganador en base al puntaje
     public Personaje determinarGanador(Personaje zelda, Personaje streetFighter) {
         int puntajeZelda = calcularPuntaje(zelda);

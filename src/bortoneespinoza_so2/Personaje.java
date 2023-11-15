@@ -24,13 +24,15 @@ public class Personaje {
     public boolean trifuerza;
     public int puntaje;
 
-    public Personaje(int id) {
+    public Personaje(int id, int game) {
         this.id = id;
         asignarNivelPrioridad();
         asignarElementos();
+        asignarHabilidadEspecial();
         this.contador = 0;
         this.hadoken = false;
         this.trifuerza = false;
+        this.game = game;
     }
 
     public int asignarNivelPrioridad() {
