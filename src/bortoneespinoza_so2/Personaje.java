@@ -20,12 +20,17 @@ public class Personaje {
     public int agilidad;
     public int game; // 1 para Zelda y 2 para Street Fighter
     public int contador;
+    public boolean hadoken;
+    public boolean trifuerza;
+    public int puntaje;
 
     public Personaje(int id) {
         this.id = id;
         asignarNivelPrioridad();
         asignarElementos();
         this.contador = 0;
+        this.hadoken = false;
+        this.trifuerza = false;
     }
 
     public int asignarNivelPrioridad() {
@@ -56,6 +61,21 @@ public class Personaje {
             // Reiniciar contador y pasar al siguiente nivel de prioridad
             contador = 0;
             nivelPrioridad--;
+        }
+    }
+
+    public void asignarHabilidadEspecial() {
+        Random random = new Random();
+        double probabilidadHabilidadEspecial = random.nextDouble();
+
+        // Habilidades especiales inspiradas en Zelda
+        if (game == 1 && probabilidadHabilidadEspecial >= 0.3) { // Personaje de Zelda
+            System.out.println("¡Habilidad Especial - Trifuerza de la Sabiduría!");
+            trifuerza = true;
+        } // Habilidades especiales inspiradas en Street Fighter
+        else if (game == 2 && probabilidadHabilidadEspecial <= 0.2) { // Personaje de Street Fighter
+            System.out.println("¡Habilidad Especial - Hadoken!");
+            hadoken = true;
         }
     }
 

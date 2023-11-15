@@ -3,32 +3,90 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package bortoneespinoza_so2;
+
 import java.util.Random;
+
 /**
  *
- * @author isabe
+ * @author isabe & giubo
  */
 public class InteligenciaArtificial {
-    //cola ganadores prioridad mas alta ;
 
+    public Queue ganadores;
+    public Personaje personaje_zelda;
+    public Personaje personaje_street;
+    
     public InteligenciaArtificial() {
-       Queue ganadores = new Queue("cola", 1);
+        Queue ganadores = new Queue("cola", 1);
     }
 
+    //Procesar batalla
     public void procesarBatalla(Personaje zelda, Personaje streetFighter) {
-        Random random = new Random();
-        double probabilidad = random.nextDouble();
+        try {
+            Thread.sleep(100);
+            Random random = new Random();
+            double probabilidad = random.nextDouble();
 
-        if (probabilidad <= 0.4) {
-            // Ganador del combate
-            mostrarResultado(zelda, streetFighter);
-            //ganadores.enqueue(); REVISAR
-        } else if (probabilidad <= 0.67) {
-            // Empate
-            System.out.println("Empate en el combate.");
+            if (probabilidad <= 0.4) {
+                // Ganador del combate
+                Personaje ganador = determinarGanador(zelda, streetFighter);
+                if (ganador != null) {
+                    mostrarResultado(ganador, (ganador == zelda) ? streetFighter : zelda);
+                    //Administrador.lista_ganadores();
+                    //Administrador.eliminar();
+                    //ganadores.enqueue_last(ganador.getId());
+
+                }
+
+            } else if (probabilidad <= 0.67) {
+                //Administrador.desencolar_cola_actual();
+                //Administrador.encolar_cola1();
+                
+                System.out.println("Empate en el combate.");
+
+            } else {
+                // No puede llevarse a cabo el combate
+                System.out.println("No se puede llevar a cabo el combate.");
+                //Administrador.desencolar_cola_actual();
+                //Administrador.encolar_refuerzo();
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    // Logica para determinafr el ganador en base al puntaje
+    public Personaje determinarGanador(Personaje zelda, Personaje streetFighter) {
+        int puntajeZelda = calcularPuntaje(zelda);
+        int puntajeStreetFighter = calcularPuntaje(streetFighter);
+
+        // Comparación de puntajes para determinar el ganador
+        if (puntajeZelda > puntajeStreetFighter) {
+            return zelda;
+        } else if (puntajeStreetFighter > puntajeZelda) {
+            return streetFighter;
         } else {
-            // No puede llevarse a cabo el combate
-            System.out.println("No se puede llevar a cabo el combate.");
+            // Los puntajes son iguales, usar Random para decidir el ganador 
+            Random random = new Random();
+            double probabilidadGanador = random.nextDouble();
+
+            if (probabilidadGanador <= 0.5) {
+                return zelda;
+            } else {
+                return streetFighter;
+            }
+
+        }
+    }
+
+    public int calcularPuntaje(Personaje personaje) {
+        if (personaje.hadoken || personaje.trifuerza) {
+            return personaje.getHabilidades() + personaje.getPuntosVida()
+                    + personaje.getFuerza() + personaje.getAgilidad() + 10;
+        } else {
+            return personaje.getHabilidades() + personaje.getPuntosVida()
+                    + personaje.getFuerza() + personaje.getAgilidad();
         }
     }
 
@@ -37,4 +95,3 @@ public class InteligenciaArtificial {
         System.out.println("Perdedor: " + perdedor.getId());
     }
 }
-

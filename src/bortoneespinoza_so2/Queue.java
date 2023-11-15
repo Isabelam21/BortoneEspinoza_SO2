@@ -122,7 +122,6 @@ public class Queue<T> {
 
     public void enqueue_last(T data_personaje) {
         Node<T> pNew = new Node<T>(data_personaje);
-
         if (isEmpty()) {
             // Si la cola está vacía, el nuevo nodo es tanto el primero como el último
             pFirst = pNew;

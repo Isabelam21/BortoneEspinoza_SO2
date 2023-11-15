@@ -13,7 +13,6 @@ public class Administrador {
     public Queue<Personaje> colaZeldaNivel2;
     public Queue<Personaje> colaZeldaNivel3;
     public Queue<Personaje> colaZeldaNivel4; // cola refuerzo Zelda
-    
 
     public Queue<Personaje> colaStreetFighterNivel1;
     public Queue<Personaje> colaStreetFighterNivel2;
@@ -30,55 +29,5 @@ public class Administrador {
         colaStreetFighterNivel2 = new Queue<>("StreetFighterNivel2", 2);
         colaStreetFighterNivel3 = new Queue<>("StreetFighterNivel3", 3);
     }
-    
-    public void inicializarPersonajes(){
-        
-    }
-//    public void realizarBatallas() {
-//        // Realiza las batallas según la descripción del proyecto
-//        // ...
-//
-//        // Después de las batallas, actualiza las colas
-//        actualizarColas();
-//
-//        // Indica a la Inteligencia Artificial que puede empezar a trabajar nuevamente
-//        // (en este punto, puedes realizar otras acciones necesarias)
-//        // ...
-//    }
 
-//    private void actualizarColas() {
-//        Random random = new Random();
-//
-//        // Cada dos ciclos de revisión, agrega un nuevo personaje de cada juego a la cola correspondiente
-//        if (random.nextDouble() <= 0.8) {
-//            colaZeldaNivel1.enqueue_last(crearNuevoPersonaje(1));
-//            colaStreetFighterNivel1.enqueue_last(crearNuevoPersonaje(2));
-//        }
-//
-//        if (random.nextDouble() <= 0.8) {
-//            colaZeldaNivel2.enqueue_last(crearNuevoPersonaje(1));
-//            colaStreetFighterNivel2.enqueue_last(crearNuevoPersonaje(2));
-//        }
-//
-//        if (random.nextDouble() <= 0.8) {
-//            colaZeldaNivel3.enqueue_last(crearNuevoPersonaje(1));
-//            colaStreetFighterNivel3.enqueue_last(crearNuevoPersonaje(2));
-//        }
-//    }
-//
-//    private Personaje crearNuevoPersonaje(int game) {
-//        // Crea un nuevo personaje con un ID único
-//        Personaje nuevoPersonaje = new Personaje(generarIdUnico());
-//        nuevoPersonaje.setGame(game);
-//        return nuevoPersonaje;
-//    }
-//
-////    private int generarIdUnico() {
-////        // Implementa la lógica para generar un ID único
-////        // Puede ser un contador, un UUID, o cualquier método que asegure la unicidad
-////        // Por simplicidad, se puede implementar un contador en esta versión
-////    }
-//}
-//
-//
 }
