@@ -40,7 +40,29 @@ public class Administrador {
         //y sea colocado en la cola de prioridad 1.
     }
     
-    public void agregarPersonaje(){
-        
+    public void agregarPersonaje(int contador){
+        //0.80
+        //Random 1 o 2 
+        //Como crear personajes con nombres distintos
 }
+    public static void desencolar_cola_actual(){
+        //Desencolame
+}
+   public static void encolar_refuerzo(){
+        ////En caso de no llevarse a cabo encolar a cada personaje en refuerzo enqueue_last
+        // Y desencolar de su cola actual IMPORTANTE
+} 
+   public static void lista_ganadores(){
+        //Agregar ganador a la lista e imprimir lista
+} 
+   public static void eliminar(Personaje perdedor){
+        //desencolar al perdedor
+        //dequeue en la empresa perdedora en la respectiva cola del personaje
+        //If piratoso con el perdedor 
+} 
+   public static void encolar_cola1(){
+        //En caso de empate encolar a cada personaje en su empresa nivel 1 enqueue_last
+        // Y desencolar de su cola actual IMPORTANTE
+}
+   
 }

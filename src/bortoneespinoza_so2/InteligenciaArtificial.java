@@ -18,7 +18,7 @@ public class InteligenciaArtificial {
     public boolean finalizado; // Variable booleana para saber si ya se termino el combate
 
     public InteligenciaArtificial() {
-        Queue ganadores = new Queue("cola", 1);
+        
         this.finalizado = false;
     }
 
@@ -34,23 +34,23 @@ public class InteligenciaArtificial {
                 Personaje ganador = determinarGanador(zelda, streetFighter);
                 if (ganador != null) {
                     mostrarResultado(ganador, (ganador == zelda) ? streetFighter : zelda);
-                    //Administrador.lista_ganadores();
+                    Administrador.lista_ganadores();
                     //Administrador.eliminar();
                     ganadores.enqueue_last(ganador.getId());
 
                 }
 
             } else if (probabilidad <= 0.67) {
-                //Administrador.desencolar_cola_actual();
-                //Administrador.encolar_cola1();
+                Administrador.desencolar_cola_actual();
+                Administrador.encolar_cola1();
 
                 System.out.println("Empate en el combate.");
 
             } else {
                 // No puede llevarse a cabo el combate
                 System.out.println("No se puede llevar a cabo el combate.");
-                //Administrador.desencolar_cola_actual();
-                //Administrador.encolar_refuerzo();
+                Administrador.desencolar_cola_actual();
+                Administrador.encolar_refuerzo();
             }
             this.finalizado = true;
 
@@ -66,17 +66,22 @@ public class InteligenciaArtificial {
 
         // Comparación de puntajes para determinar el ganador
         if (puntajeZelda > puntajeStreetFighter) {
+            Administrador.eliminar(streetFighter);
             return zelda;
         } else if (puntajeStreetFighter > puntajeZelda) {
+            Administrador.eliminar(zelda);
             return streetFighter;
         } else {
             // Los puntajes son iguales, usar Random para decidir el ganador 
             Random random = new Random();
             double probabilidadGanador = random.nextDouble();
-
+            
+            
             if (probabilidadGanador <= 0.5) {
+                Administrador.eliminar(streetFighter);
                 return zelda;
             } else {
+                Administrador.eliminar(zelda);
                 return streetFighter;
             }
 
