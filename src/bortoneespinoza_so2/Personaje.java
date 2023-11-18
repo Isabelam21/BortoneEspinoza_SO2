@@ -35,6 +35,7 @@ public class Personaje {
         this.game = game;
     }
 
+    
     public int asignarNivelPrioridad() {
         // Lógica basada en las habilidades adquiridas
         int totalHabilidades = habilidades + puntosVida + fuerza + agilidad;

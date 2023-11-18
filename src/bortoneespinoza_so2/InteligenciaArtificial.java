@@ -41,16 +41,20 @@ public class InteligenciaArtificial {
                 }
 
             } else if (probabilidad <= 0.67) {
-                Administrador.desencolar_cola_actual();
-                Administrador.encolar_cola1();
+                Administrador.desencolar_cola_actual(zelda);
+                Administrador.desencolar_cola_actual(streetFighter);
+                Administrador.encolar_cola1(zelda);
+                Administrador.encolar_cola1(streetFighter);
 
                 System.out.println("Empate en el combate.");
 
             } else {
                 // No puede llevarse a cabo el combate
                 System.out.println("No se puede llevar a cabo el combate.");
-                Administrador.desencolar_cola_actual();
-                Administrador.encolar_refuerzo();
+                Administrador.desencolar_cola_actual(zelda);
+                Administrador.desencolar_cola_actual(streetFighter);
+                Administrador.encolar_refuerzo(zelda);
+                Administrador.encolar_refuerzo(streetFighter);
             }
             this.finalizado = true;
 
