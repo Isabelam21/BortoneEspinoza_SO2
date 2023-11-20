@@ -16,16 +16,24 @@ public class InteligenciaArtificial {
     public Personaje personaje_zelda;
     public Personaje personaje_street;
     public boolean finalizado; // Variable booleana para saber si ya se termino el combate
+    public static String estado;
 
     public InteligenciaArtificial() {
-        
+
         this.finalizado = false;
+        this.estado = "Esperando";
     }
 
     //Procesar batalla
     public void procesarBatalla(Personaje zelda, Personaje streetFighter) {
         try {
-            Thread.sleep(100);
+
+            Administrador.print_queues();
+            System.out.println(" ");
+            System.out.println("Personaje zelda: " + zelda.getId() + " " + zelda.getNombre());
+            System.out.println("Personaje Street Fighter: " + streetFighter.getId() + " " + streetFighter.getNombre());
+            this.estado = "Peleando";
+            Thread.sleep(1000);
             Random random = new Random();
             double probabilidad = random.nextDouble();
 
@@ -34,22 +42,20 @@ public class InteligenciaArtificial {
                 Personaje ganador = determinarGanador(zelda, streetFighter);
                 if (ganador != null) {
                     mostrarResultado(ganador, (ganador == zelda) ? streetFighter : zelda);
-                    Administrador.lista_ganadores();
-                    //Administrador.eliminar();
-                    ganadores.enqueue_last(ganador.getId());
-
                 }
+                Administrador.desencolar_cola_actual(ganador);
 
             } else if (probabilidad <= 0.67) {
+                System.out.println(" ");
+                System.out.println("Empate en el combate.");
                 Administrador.desencolar_cola_actual(zelda);
                 Administrador.desencolar_cola_actual(streetFighter);
                 Administrador.encolar_cola1(zelda);
                 Administrador.encolar_cola1(streetFighter);
 
-                System.out.println("Empate en el combate.");
-
             } else {
                 // No puede llevarse a cabo el combate
+                System.out.println(" ");
                 System.out.println("No se puede llevar a cabo el combate.");
                 Administrador.desencolar_cola_actual(zelda);
                 Administrador.desencolar_cola_actual(streetFighter);
@@ -57,6 +63,11 @@ public class InteligenciaArtificial {
                 Administrador.encolar_refuerzo(streetFighter);
             }
             this.finalizado = true;
+            Administrador.actualizarColas(zelda, streetFighter);
+
+            System.out.println();
+            this.estado ="Final del combate";
+            
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -70,22 +81,25 @@ public class InteligenciaArtificial {
 
         // Comparación de puntajes para determinar el ganador
         if (puntajeZelda > puntajeStreetFighter) {
-            Administrador.eliminar(streetFighter);
+
+            Administrador.desencolar_cola_actual(streetFighter);
             return zelda;
         } else if (puntajeStreetFighter > puntajeZelda) {
-            Administrador.eliminar(zelda);
+
+            Administrador.desencolar_cola_actual(zelda);
             return streetFighter;
         } else {
             // Los puntajes son iguales, usar Random para decidir el ganador 
             Random random = new Random();
             double probabilidadGanador = random.nextDouble();
-            
-            
+
             if (probabilidadGanador <= 0.5) {
-                Administrador.eliminar(streetFighter);
+                Administrador.desencolar_cola_actual(streetFighter);
+
                 return zelda;
             } else {
-                Administrador.eliminar(zelda);
+                Administrador.desencolar_cola_actual(zelda);
+
                 return streetFighter;
             }
 
@@ -103,7 +117,10 @@ public class InteligenciaArtificial {
     }
 
     private void mostrarResultado(Personaje ganador, Personaje perdedor) {
-        System.out.println("Ganador: " + ganador.getId());
-        System.out.println("Perdedor: " + perdedor.getId());
+        System.out.println(" ");
+        System.out.println("RESULTADOS:");
+        System.out.println(" ");
+        System.out.println("Ganador: " + ganador.getId() + " " + ganador.getNombre());
+        System.out.println("Perdedor: " + perdedor.getId() + " " + perdedor.getNombre());
     }
 }

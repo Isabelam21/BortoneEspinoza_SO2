@@ -14,22 +14,31 @@ public class bortoneEspinoza_SO2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Queue cola1 = new Queue("cola", 1);
-        Personaje personaje1 = new Personaje(1,1);
-        Personaje personaje2 = new Personaje(2,1);
-        Personaje personaje3 = new Personaje(3,2);
-        Personaje personaje4 = new Personaje(4,2);
-        Personaje personaje5 = new Personaje(5,2);
-        Node nodo_personaje1 = new Node(personaje1.id);
-        cola1.enqueue(personaje1.id , nodo_personaje1);
-        System.out.println(nodo_personaje1.getData());
-        cola1.recorrer();
-        System.out.println(personaje1.asignarNivelPrioridad());
-        System.out.println(personaje2.asignarNivelPrioridad());
-        System.out.println(personaje3.asignarNivelPrioridad());
-        System.out.println(personaje4.asignarNivelPrioridad());
-        System.out.println(personaje5.asignarNivelPrioridad());
 
+        InteligenciaArtificial IA = new InteligenciaArtificial();
+        Administrador admin = new Administrador();
+
+        for (int a = 0; a < 5; a++) {
+            Personaje personaje_zelda = Personaje.crear_personaje_zelda(Administrador.contId_zelda);
+            Administrador.contId_zelda++;
+            Administrador.encolarEnSuPrioridad(personaje_zelda);
+        }
+
+        for (int b = 0; b <5; b++) {
+            Personaje personaje_street = Personaje.crear_personaje_street(Administrador.contId_street);
+            Administrador.contId_street++;
+            Administrador.encolarEnSuPrioridad(personaje_street);
+
+        }
+        
+        for (int rondas = 0; rondas < 3; rondas++) {
+            System.out.println("----- RONDA" + rondas + "------");
+            Personaje personaje_zelda = Administrador.obtenerPersonajeZelda();
+            Personaje personaje_street = Administrador.obtenerPersonajeStreet();
+            IA.procesarBatalla(personaje_zelda, personaje_street);
+            
+
+        }
     }
 
 }

@@ -98,14 +98,16 @@ public class Queue<T> {
         Node<T> pNew = new Node<T>(data_personaje);
         if (isEmpty()) {
             pFirst = pNew;
+
         } else {
             pNew.pnext = pValor.pnext;
             pValor.pnext = pNew;
+            System.out.println(this.priority);
         }
         size++;
     }
 
-    public Node<T> dequeue() {
+    public T dequeue() {
         if (!isEmpty()) {
             Node<T> removedNode = pFirst;
             pFirst = pFirst.pnext;
@@ -114,9 +116,22 @@ public class Queue<T> {
                 pLast = null;
             }
             size--;
-            return removedNode;
+
+            return removedNode.getData(); // Devuelve el valor del nodo eliminado
         } else {
-            return null;
+            System.out.println("cola vacia dequeue");
+            return null; // O puedes lanzar una excepción o manejar de otra manera cuando la cola está vacía
+        }
+    }
+    // Si se eliminó el último nodo, actualiza pLast a null
+
+    public T peak() {
+        if (!isEmpty()) {
+            Node<Personaje> removedNode = (Node<Personaje>) pFirst;
+            return (T) removedNode.getData();
+        } else {
+            System.out.println("Cola vacía para peak");
+            return null; // O podrías lanzar una excepción aquí según tus necesidades.
         }
     }
 
@@ -136,21 +151,38 @@ public class Queue<T> {
     }
 
     public String recorrer() {
-        Node<T> pAux;
+        Node<Personaje> pAux;
         String resultado = "";
         if (isEmpty()) {
             resultado = " está vacía";
             System.out.println(resultado);
 
         } else {
-            pAux = pFirst;
+            pAux = (Node<Personaje>) pFirst;
             while (pAux != null) {
-                System.out.println(pAux.getData());
-                pAux = next(pAux);
+                System.out.println(pAux.getData().getId() + " " + pAux.getData().getNombre());
+                pAux = next((Node<T>) pAux);
 
             }
         }
         return resultado;
+    }
+
+    public String recorrer_imprimir() {
+        Node<Personaje> pAux = (Node<Personaje>) pFirst;
+        StringBuilder resultado = new StringBuilder();
+
+        if (isEmpty()) {
+            // No necesitas imprimir aquí, solo devuelve el resultado vacío
+            return resultado.toString();
+        } else {
+            while (pAux != null) {
+                resultado.append(pAux.getData().getId()).append(" ").append(pAux.getData().getNombre()).append(", ");
+                pAux = pAux.pnext;
+            }
+        }
+
+        return resultado.toString();
     }
 
 }
