@@ -17,6 +17,7 @@ public class InteligenciaArtificial {
     public Personaje personaje_street;
     public boolean finalizado; // Variable booleana para saber si ya se termino el combate
     public static String estado;
+    public static int tiempo;
 
     public InteligenciaArtificial() {
 
@@ -33,7 +34,7 @@ public class InteligenciaArtificial {
             System.out.println("Personaje zelda: " + zelda.getId() + " " + zelda.getNombre());
             System.out.println("Personaje Street Fighter: " + streetFighter.getId() + " " + streetFighter.getNombre());
             this.estado = "Peleando";
-            Thread.sleep(1000);
+            Thread.sleep(1000 * tiempo);
             Random random = new Random();
             double probabilidad = random.nextDouble();
 
