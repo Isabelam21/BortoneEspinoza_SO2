@@ -18,25 +18,27 @@ public class bortoneEspinoza_SO2 {
         InteligenciaArtificial IA = new InteligenciaArtificial();
         Administrador admin = new Administrador();
 
-        for (int a = 0; a < 5; a++) {
+        for (int a = 0; a < 20; a++) {
             Personaje personaje_zelda = Personaje.crear_personaje_zelda(Administrador.contId_zelda);
             Administrador.contId_zelda++;
             Administrador.encolarEnSuPrioridad(personaje_zelda);
         }
 
-        for (int b = 0; b <5; b++) {
+        for (int b = 0; b < 20; b++) {
             Personaje personaje_street = Personaje.crear_personaje_street(Administrador.contId_street);
             Administrador.contId_street++;
             Administrador.encolarEnSuPrioridad(personaje_street);
 
         }
-        
-        for (int rondas = 0; rondas < 3; rondas++) {
+
+        for (int rondas = 0; rondas < 100; rondas++) {
+            if (Administrador.fin) {
+                break;
+            }
             System.out.println("----- RONDA" + rondas + "------");
             Personaje personaje_zelda = Administrador.obtenerPersonajeZelda();
             Personaje personaje_street = Administrador.obtenerPersonajeStreet();
             IA.procesarBatalla(personaje_zelda, personaje_street);
-            
 
         }
     }

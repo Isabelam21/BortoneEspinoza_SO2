@@ -17,6 +17,7 @@ public class Administrador {
     public static int contId_street;
     public static int contId_zelda;
     public static int contador; // Para contador de rondas
+    public static boolean fin;
 
     public static Queue<Personaje> colaStreetFighterNivel1;
     public static Queue<Personaje> colaStreetFighterNivel2;
@@ -39,10 +40,17 @@ public class Administrador {
         this.contId_street = 100;
         this.rondas = 0;
         this.contador = 0;
+        this.fin = false;
 
     }
 
     public static void actualizarColas(Personaje zelda, Personaje street) {
+        if (colaZeldaNivel1.isEmpty() && colaZeldaNivel2.isEmpty() && colaZeldaNivel3.isEmpty()
+                || colaStreetFighterNivel1.isEmpty() && colaStreetFighterNivel2.isEmpty() && colaStreetFighterNivel3.isEmpty()) {
+            System.out.println("FIN DEL JUEGO");
+            fin = true;
+            
+        }
         InteligenciaArtificial.estado = "Esperando";
         System.out.println(" ");
         System.out.println("ACTUALIZACION COLAS");
@@ -57,7 +65,7 @@ public class Administrador {
             agregarPersonaje();
 
         } else if (probabilidadrefuerzo <= 0.40) {
-            
+
             System.out.println("Para efectos del refuerzo");
             // Para el personaje de zelda
 
@@ -70,10 +78,9 @@ public class Administrador {
             street.setNivelPrioridad(1);
             encolarEnSuPrioridad(street);
             Administrador.print_queues();
-            
-            
 
         }
+
     }
 
     public static void print_queues() {

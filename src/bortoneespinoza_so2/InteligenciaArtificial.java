@@ -28,7 +28,10 @@ public class InteligenciaArtificial {
     //Procesar batalla
     public void procesarBatalla(Personaje zelda, Personaje streetFighter) {
         try {
-
+            if (zelda == null || streetFighter == null) {
+                System.out.println("GAME OVER");
+                return;
+            }
             Administrador.print_queues();
             System.out.println(" ");
             System.out.println("Personaje zelda: " + zelda.getId() + " " + zelda.getNombre());
@@ -67,8 +70,7 @@ public class InteligenciaArtificial {
             Administrador.actualizarColas(zelda, streetFighter);
 
             System.out.println();
-            this.estado ="Final del combate";
-            
+            this.estado = "Final del combate";
 
         } catch (InterruptedException e) {
             e.printStackTrace();
