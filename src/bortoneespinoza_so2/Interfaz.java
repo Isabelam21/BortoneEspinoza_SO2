@@ -47,8 +47,10 @@ public class Interfaz extends javax.swing.JFrame {
         TituloS = new javax.swing.JLabel();
         streetImg = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        medior_tiempo = new javax.swing.JSpinner();
         batallas_zelda = new javax.swing.JLabel();
         vs_imagen = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         zeldaImg = new javax.swing.JLabel();
         batallas_street = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -80,6 +82,10 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 170, 520));
 
+        medior_tiempo.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        medior_tiempo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel1.add(medior_tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 40, 30));
+
         batallas_zelda.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         batallas_zelda.setForeground(new java.awt.Color(255, 255, 255));
         batallas_zelda.setText("Batallas Ganadas");
@@ -87,6 +93,9 @@ public class Interfaz extends javax.swing.JFrame {
 
         vs_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/png-transparent-vs-showdown-vs-calligraphy-pk-duel-game-vs-thumbnail-removebg-preview (1).png"))); // NOI18N
         jPanel1.add(vs_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 170, 240));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/image.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
 
         zeldaImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         zeldaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ZELDA_Link.jpg"))); // NOI18N
@@ -168,9 +177,11 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel TituloT;
     private javax.swing.JLabel batallas_street;
     private javax.swing.JLabel batallas_zelda;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSpinner medior_tiempo;
     public static javax.swing.JLabel streetImg;
     public static javax.swing.JLabel streetName;
     private javax.swing.JLabel vs_imagen;
