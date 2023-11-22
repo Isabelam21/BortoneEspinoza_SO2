@@ -208,7 +208,7 @@ public class Queue<T> {
             while (pAux != null) {
                 // Añadir el elemento a la cola correspondiente
                 int prioridad = pAux.getData().getNivelPrioridad();
-                String info = pAux.getData().getNombre() + ",";
+                String info = pAux.getData().getId() + " " + pAux.getData().getNombre() + ",";
 
                 switch (prioridad) {
                     case 1:
@@ -247,7 +247,7 @@ public class Queue<T> {
             while (pAux != null) {
                 // Añadir el elemento a la cola correspondiente
                 int prioridad = pAux.getData().getNivelPrioridad();
-                String info = pAux.getData().getNombre() + ",";
+                String info = pAux.getData().getId() + " " + pAux.getData().getNombre() + ",";
 
                 switch (prioridad) {
                     case 1:
