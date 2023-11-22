@@ -63,6 +63,7 @@ public class InteligenciaArtificial {
                 Thread.sleep(2000);
                 System.out.println(" ");
                 System.out.println("Empate en el combate.");
+                Interfaz.empate_activo();
                 Administrador.desencolar_cola_actual(zelda);
                 Administrador.desencolar_cola_actual(streetFighter);
                 Administrador.encolar_cola1(zelda);
@@ -71,6 +72,7 @@ public class InteligenciaArtificial {
             } else {
                 // No puede llevarse a cabo el combate
                 Thread.sleep(2000);
+                Interfaz.no_combate();
                 System.out.println(" ");
                 System.out.println("No se puede llevar a cabo el combate.");
                 Administrador.desencolar_cola_actual(zelda);
@@ -99,11 +101,11 @@ public class InteligenciaArtificial {
 
         // Comparación de puntajes para determinar el ganador
         if (puntajeZelda > puntajeStreetFighter) {
-
+            Interfaz.trofeo_zelda_activo();
             Administrador.desencolar_cola_actual(streetFighter);
             return zelda;
         } else if (puntajeStreetFighter > puntajeZelda) {
-
+            Interfaz.trofeo_street_activo();
             Administrador.desencolar_cola_actual(zelda);
             return streetFighter;
         } else {
@@ -112,12 +114,13 @@ public class InteligenciaArtificial {
             double probabilidadGanador = random.nextDouble();
 
             if (probabilidadGanador <= 0.5) {
+                Interfaz.trofeo_zelda_activo();
                 Administrador.desencolar_cola_actual(streetFighter);
 
                 return zelda;
             } else {
+                Interfaz.trofeo_street_activo();
                 Administrador.desencolar_cola_actual(zelda);
-
                 return streetFighter;
             }
 

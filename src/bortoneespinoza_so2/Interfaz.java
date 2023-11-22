@@ -47,7 +47,10 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         TituloT = new javax.swing.JLabel();
+        empate = new javax.swing.JLabel();
         TituloS = new javax.swing.JLabel();
+        trofeo_zelda = new javax.swing.JLabel();
+        trofeo_street = new javax.swing.JLabel();
         streetImg = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         medior_tiempo = new javax.swing.JSpinner();
@@ -61,6 +64,7 @@ public class Interfaz extends javax.swing.JFrame {
         zeldaName = new javax.swing.JLabel();
         estadoBatalla = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,14 +76,23 @@ public class Interfaz extends javax.swing.JFrame {
         TituloT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/TearsFondo (1)_1.png"))); // NOI18N
         jPanel1.add(TituloT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 190, 180));
 
+        empate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/empate.png"))); // NOI18N
+        jPanel1.add(empate, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 330, 70));
+
         TituloS.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         TituloS.setForeground(new java.awt.Color(0, 0, 204));
         TituloS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/StreetFondo (2).png"))); // NOI18N
         jPanel1.add(TituloS, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 150));
 
+        trofeo_zelda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Screen-Shot-2016-12-03-at-7.59.54-PM-removebg-preview (1).png"))); // NOI18N
+        jPanel1.add(trofeo_zelda, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 80, 60));
+
+        trofeo_street.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Screen-Shot-2016-12-03-at-7.59.54-PM-removebg-preview (1).png"))); // NOI18N
+        jPanel1.add(trofeo_street, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
+
         streetImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         streetImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fei Long.jpg"))); // NOI18N
-        jPanel1.add(streetImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 80, 80));
+        jPanel1.add(streetImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 80, 80));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/456-4568018_you-win-png-street-fighter-you-win-png-removebg-preview (3) (1).png"))); // NOI18N
@@ -114,17 +127,17 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel4.setText("Ganador");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, -1, -1));
 
-        streetName.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        streetName.setForeground(new java.awt.Color(0, 0, 0));
+        streetName.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
+        streetName.setForeground(new java.awt.Color(255, 255, 255));
         streetName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         streetName.setText("Nombre");
-        jPanel1.add(streetName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 90, -1));
+        jPanel1.add(streetName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 90, -1));
 
-        zeldaName.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        zeldaName.setForeground(new java.awt.Color(0, 0, 0));
+        zeldaName.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
+        zeldaName.setForeground(new java.awt.Color(255, 255, 255));
         zeldaName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         zeldaName.setText("Nombre");
-        jPanel1.add(zeldaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 90, -1));
+        jPanel1.add(zeldaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 180, 20));
 
         estadoBatalla.setFont(new java.awt.Font("Purisa", 1, 24)); // NOI18N
         estadoBatalla.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,6 +148,9 @@ public class Interfaz extends javax.swing.JFrame {
         Fondo.setForeground(new java.awt.Color(0, 0, 102));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/812075.png"))); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 750, 550));
+
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 540));
 
@@ -149,9 +165,14 @@ public class Interfaz extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interfaz().setVisible(true);
+                zeldaImg.setVisible(false);
+                streetImg.setVisible(false);
+                eliminar_trofeo_zelda();
+                eliminar_trofeo_street();
+                empate_desactivo();
+
             }
         });
-
         InteligenciaArtificial IA = new InteligenciaArtificial();
         Administrador admin = new Administrador();
 
@@ -172,10 +193,15 @@ public class Interfaz extends javax.swing.JFrame {
             if (Administrador.fin) {
                 break;
             }
+
             System.out.println("----- RONDA" + rondas + "------");
             Personaje personaje_zelda = Administrador.obtenerPersonajeZelda();
             Personaje personaje_street = Administrador.obtenerPersonajeStreet();
             IA.procesarBatalla(personaje_zelda, personaje_street);
+            eliminar_trofeo_zelda();
+            eliminar_trofeo_street();
+            empate_desactivo();
+
         }
 
     }
@@ -200,8 +226,32 @@ public class Interfaz extends javax.swing.JFrame {
         return zeldaImg;
     }
 
+    public JLabel getTrofeo_street() {
+        return trofeo_street;
+    }
+
+    public JLabel getTrofeo_zelda() {
+        return trofeo_zelda;
+    }
+
+    public void setTrofeo_street(JLabel trofeo_street) {
+        this.trofeo_street = trofeo_street;
+    }
+
+    public void setTrofeo_zelda(JLabel trofeo_zelda) {
+        this.trofeo_zelda = trofeo_zelda;
+    }
+
     public static void setZeldaImg(JLabel zeldaImg) {
         Interfaz.zeldaImg = zeldaImg;
+    }
+
+    public static void setEmpate(JLabel empate) {
+        Interfaz.empate = empate;
+    }
+
+    public static JLabel getEmpate() {
+        return empate;
     }
 
     public static JLabel getZeldaName() {
@@ -223,14 +273,49 @@ public class Interfaz extends javax.swing.JFrame {
     public static void actualizarNombreZelda(String name) {
         if (zeldaName != null && zeldaImg != null) {
             zeldaName.setText(name);
-            zeldaImg.setIcon(new ImageIcon("src//Imagenes//" + name + ".jpg")); 
+            zeldaImg.setIcon(new ImageIcon("src//Imagenes//" + name + ".jpg"));
+            zeldaImg.setVisible(true);
+
         }
+    }
+
+    public static void trofeo_zelda_activo() {
+        trofeo_zelda.setVisible(true);
+    }
+
+    public static void trofeo_street_activo() {
+        trofeo_street.setVisible(true);
+
+    }
+
+    public static void empate_activo() {
+        empate.setIcon(new ImageIcon("src//Imagenes//" + "empate" + ".png"));
+        empate.setVisible(true);
+    }
+
+    public static void no_combate() {
+        empate.setIcon(new ImageIcon("src//Imagenes//" + "combate" + ".png"));
+        empate.setVisible(true);
+    }
+
+    public static void empate_desactivo() {
+        empate.setVisible(false);
+    }
+
+    public static void eliminar_trofeo_zelda() {
+        trofeo_zelda.setVisible(false);
+    }
+
+    public static void eliminar_trofeo_street() {
+        trofeo_street.setVisible(false);
+
     }
 
     public static void actualizarNombreStreet(String name) {
         if (streetName != null && streetImg != null) {
             streetName.setText(name);
             streetImg.setIcon(new ImageIcon("src//Imagenes//" + name + ".jpg"));
+            streetImg.setVisible(true);
         }
     }
 
@@ -246,14 +331,18 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel TituloT;
     private javax.swing.JLabel batallas_street;
     private javax.swing.JLabel batallas_zelda;
+    public static javax.swing.JLabel empate;
     public static javax.swing.JLabel estadoBatalla;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSpinner medior_tiempo;
     public static javax.swing.JLabel streetImg;
     public static javax.swing.JLabel streetName;
+    public static javax.swing.JLabel trofeo_street;
+    public static javax.swing.JLabel trofeo_zelda;
     private javax.swing.JLabel vs_imagen;
     public static javax.swing.JLabel zeldaImg;
     public static javax.swing.JLabel zeldaName;
