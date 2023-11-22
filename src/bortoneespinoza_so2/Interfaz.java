@@ -4,6 +4,9 @@
  */
 package bortoneespinoza_so2;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author isabe
@@ -14,23 +17,23 @@ public class Interfaz extends javax.swing.JFrame {
      * Creates new form Interfaz
      */
     public Interfaz() {
-        
+
         int i = 0;
-        
+
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
         //iniciar 20 hilos, 10 y 10. POR HACER 
-        
-        while (true) {          
+        while (true) {
 
             i++;
 
 //            Node node = new Node();
+            if (i == 10) {
+                break;
+            }
 
-            if (i==10) { break;}
-
-        }   
+        }
     }
 
     /**
@@ -56,7 +59,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         streetName = new javax.swing.JLabel();
         zeldaName = new javax.swing.JLabel();
-        zeldaName1 = new javax.swing.JLabel();
+        estadoBatalla = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,12 +78,13 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1.add(TituloS, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, 150));
 
         streetImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        streetImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/STREET_Fei_Long.jpg"))); // NOI18N
+        streetImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fei Long.jpg"))); // NOI18N
         jPanel1.add(streetImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 80, 80));
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/456-4568018_you-win-png-street-fighter-you-win-png-removebg-preview (3) (1).png"))); // NOI18N
         jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 170, 520));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, 130, 50));
 
         medior_tiempo.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         medior_tiempo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -91,14 +95,15 @@ public class Interfaz extends javax.swing.JFrame {
         batallas_zelda.setText("Batallas Ganadas");
         jPanel1.add(batallas_zelda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 280, 60));
 
+        vs_imagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vs_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/png-transparent-vs-showdown-vs-calligraphy-pk-duel-game-vs-thumbnail-removebg-preview (1).png"))); // NOI18N
-        jPanel1.add(vs_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 170, 240));
+        jPanel1.add(vs_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 90, 90));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/image.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
 
         zeldaImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        zeldaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ZELDA_Link.jpg"))); // NOI18N
+        zeldaImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Link.jpg"))); // NOI18N
         jPanel1.add(zeldaImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 80, 80));
 
         batallas_street.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
@@ -121,11 +126,11 @@ public class Interfaz extends javax.swing.JFrame {
         zeldaName.setText("Nombre");
         jPanel1.add(zeldaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 90, -1));
 
-        zeldaName1.setFont(new java.awt.Font("Purisa", 1, 24)); // NOI18N
-        zeldaName1.setForeground(new java.awt.Color(255, 255, 255));
-        zeldaName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        zeldaName1.setText("Estado");
-        jPanel1.add(zeldaName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 170, -1));
+        estadoBatalla.setFont(new java.awt.Font("Purisa", 1, 24)); // NOI18N
+        estadoBatalla.setForeground(new java.awt.Color(255, 255, 255));
+        estadoBatalla.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        estadoBatalla.setText("Estado");
+        jPanel1.add(estadoBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 170, -1));
 
         Fondo.setForeground(new java.awt.Color(0, 0, 102));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/812075.png"))); // NOI18N
@@ -139,36 +144,100 @@ public class Interfaz extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    public static void main(String[] args) {
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interfaz().setVisible(true);
             }
         });
+
+        InteligenciaArtificial IA = new InteligenciaArtificial();
+        Administrador admin = new Administrador();
+
+        for (int a = 0; a < 20; a++) {
+            Personaje personaje_zelda = Personaje.crear_personaje_zelda(Administrador.contId_zelda);
+            Administrador.contId_zelda++;
+            Administrador.encolarEnSuPrioridad(personaje_zelda);
+        }
+
+        for (int b = 0; b < 20; b++) {
+            Personaje personaje_street = Personaje.crear_personaje_street(Administrador.contId_street);
+            Administrador.contId_street++;
+            Administrador.encolarEnSuPrioridad(personaje_street);
+
+        }
+
+        for (int rondas = 0; rondas < 100; rondas++) {
+            if (Administrador.fin) {
+                break;
+            }
+            System.out.println("----- RONDA" + rondas + "------");
+            Personaje personaje_zelda = Administrador.obtenerPersonajeZelda();
+            Personaje personaje_street = Administrador.obtenerPersonajeStreet();
+            IA.procesarBatalla(personaje_zelda, personaje_street);
+        }
+
+    }
+
+    public static JLabel getStreetImg() {
+        return streetImg;
+    }
+
+    public static void setStreetImg(JLabel streetImg) {
+        Interfaz.streetImg = streetImg;
+    }
+
+    public static JLabel getStreetName() {
+        return streetName;
+    }
+
+    public static void setStreetName(JLabel streetName) {
+        Interfaz.streetName = streetName;
+    }
+
+    public static JLabel getZeldaImg() {
+        return zeldaImg;
+    }
+
+    public static void setZeldaImg(JLabel zeldaImg) {
+        Interfaz.zeldaImg = zeldaImg;
+    }
+
+    public static JLabel getZeldaName() {
+        return zeldaName;
+    }
+
+    public static void setZeldaName(JLabel zeldaName) {
+        Interfaz.zeldaName = zeldaName;
+    }
+
+    public static JLabel getEstadoBatalla() {
+        return estadoBatalla;
+    }
+
+    public static void setEstadoBatalla(JLabel estadoBatalla) {
+        Interfaz.estadoBatalla = estadoBatalla;
+    }
+
+    public static void actualizarNombreZelda(String name) {
+        if (zeldaName != null && zeldaImg != null) {
+            zeldaName.setText(name);
+            zeldaImg.setIcon(new ImageIcon("src//Imagenes//" + name + ".jpg")); 
+        }
+    }
+
+    public static void actualizarNombreStreet(String name) {
+        if (streetName != null && streetImg != null) {
+            streetName.setText(name);
+            streetImg.setIcon(new ImageIcon("src//Imagenes//" + name + ".jpg"));
+        }
+    }
+
+    public static void actualizarEstado(String estado) {
+        if (estadoBatalla != null) {
+            estadoBatalla.setText(estado);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -177,6 +246,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel TituloT;
     private javax.swing.JLabel batallas_street;
     private javax.swing.JLabel batallas_zelda;
+    public static javax.swing.JLabel estadoBatalla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -187,6 +257,5 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel vs_imagen;
     public static javax.swing.JLabel zeldaImg;
     public static javax.swing.JLabel zeldaName;
-    public static javax.swing.JLabel zeldaName1;
     // End of variables declaration//GEN-END:variables
 }

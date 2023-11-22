@@ -5,6 +5,8 @@
 package bortoneespinoza_so2;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Administrador {
 
@@ -25,7 +27,12 @@ public class Administrador {
     public static Queue<Personaje> colaStreetFighterNivel4; // cola refuerzo StreetFighter
 
     public Administrador() {
-        // Inicializa las colas
+        try {
+            // Inicializa las colas
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
         colaZeldaNivel1 = new Queue<>("ZeldaNivel1", 1);
         colaZeldaNivel2 = new Queue<>("ZeldaNivel2", 2);
         colaZeldaNivel3 = new Queue<>("ZeldaNivel3", 3);
@@ -49,9 +56,10 @@ public class Administrador {
                 || colaStreetFighterNivel1.isEmpty() && colaStreetFighterNivel2.isEmpty() && colaStreetFighterNivel3.isEmpty()) {
             System.out.println("FIN DEL JUEGO");
             fin = true;
-            
+
         }
         InteligenciaArtificial.estado = "Esperando";
+        Interfaz.actualizarEstado(InteligenciaArtificial.estado);
         System.out.println(" ");
         System.out.println("ACTUALIZACION COLAS");
         Random random = new Random();
@@ -69,15 +77,18 @@ public class Administrador {
             System.out.println("Para efectos del refuerzo");
             // Para el personaje de zelda
 
-            desencolar_cola_actual(zelda);
-            zelda.setNivelPrioridad(1);
-            encolarEnSuPrioridad(zelda);
+            if (!colaZeldaNivel4.isEmpty()) {
+                Personaje personaje_zelda = colaZeldaNivel4.dequeue();
+                personaje_zelda.setNivelPrioridad(1);
+                encolarEnSuPrioridad(personaje_zelda);
+            }
 
-            //Para el personaje de Street Fighter
-            desencolar_cola_actual(street);
-            street.setNivelPrioridad(1);
-            encolarEnSuPrioridad(street);
-            Administrador.print_queues();
+            if (!colaStreetFighterNivel4.isEmpty()) {
+                //Para el personaje de Street Fighter
+                Personaje personaje_street = colaStreetFighterNivel4.dequeue();
+                personaje_street.setNivelPrioridad(1);
+                encolarEnSuPrioridad(personaje_street);
+            }
 
         }
 

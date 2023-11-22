@@ -32,16 +32,26 @@ public class InteligenciaArtificial {
                 System.out.println("GAME OVER");
                 return;
             }
+
+            Thread.sleep(1000 * tiempo);
+
+            this.estado = "Peleando";
+            // Set nombres e imagenes en la interfaz
+            Interfaz.actualizarEstado(estado);
+            Interfaz.actualizarNombreZelda(zelda.getNombre());
+            Interfaz.actualizarNombreStreet(streetFighter.getNombre());
+
             Administrador.print_queues();
             System.out.println(" ");
             System.out.println("Personaje zelda: " + zelda.getId() + " " + zelda.getNombre());
             System.out.println("Personaje Street Fighter: " + streetFighter.getId() + " " + streetFighter.getNombre());
-            this.estado = "Peleando";
-            Thread.sleep(1000 * tiempo);
+            Interfaz.actualizarEstado(estado);
+
             Random random = new Random();
             double probabilidad = random.nextDouble();
 
             if (probabilidad <= 0.4) {
+                Thread.sleep(2000);
                 // Ganador del combate
                 Personaje ganador = determinarGanador(zelda, streetFighter);
                 if (ganador != null) {
@@ -50,6 +60,7 @@ public class InteligenciaArtificial {
                 Administrador.desencolar_cola_actual(ganador);
 
             } else if (probabilidad <= 0.67) {
+                Thread.sleep(2000);
                 System.out.println(" ");
                 System.out.println("Empate en el combate.");
                 Administrador.desencolar_cola_actual(zelda);
@@ -59,6 +70,7 @@ public class InteligenciaArtificial {
 
             } else {
                 // No puede llevarse a cabo el combate
+                Thread.sleep(2000);
                 System.out.println(" ");
                 System.out.println("No se puede llevar a cabo el combate.");
                 Administrador.desencolar_cola_actual(zelda);
@@ -69,8 +81,11 @@ public class InteligenciaArtificial {
             this.finalizado = true;
             Administrador.actualizarColas(zelda, streetFighter);
 
+            Thread.sleep(2000);
+
             System.out.println();
             this.estado = "Final del combate";
+            Interfaz.actualizarEstado(estado);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

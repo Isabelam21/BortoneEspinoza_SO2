@@ -76,7 +76,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/STREET_Fei_Long.jpg"/>
+              <Image iconType="3" name="/Imagenes/Fei Long.jpg"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -90,6 +90,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/456-4568018_you-win-png-street-fighter-you-win-png-removebg-preview (3) (1).png"/>
             </Property>
@@ -97,7 +98,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="200" y="240" width="170" height="520"/>
+              <AbsoluteConstraints x="240" y="480" width="130" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -138,13 +139,14 @@
         </Component>
         <Component class="javax.swing.JLabel" name="vs_imagen">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/png-transparent-vs-showdown-vs-calligraphy-pk-duel-game-vs-thumbnail-removebg-preview (1).png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="340" y="220" width="170" height="240"/>
+              <AbsoluteConstraints x="340" y="210" width="90" height="90"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -164,7 +166,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/ZELDA_Link.jpg"/>
+              <Image iconType="3" name="/Imagenes/Link.jpg"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -242,7 +244,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="zeldaName1">
+        <Component class="javax.swing.JLabel" name="estadoBatalla">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Purisa" size="24" style="1"/>
