@@ -4,6 +4,7 @@
  */
 package bortoneespinoza_so2;
 
+import static bortoneespinoza_so2.Administrador.colaZeldaNivel1;
 import java.util.Random;
 
 /**
@@ -88,6 +89,7 @@ public class InteligenciaArtificial {
             System.out.println();
             this.estado = "Final del combate";
             Interfaz.actualizarEstado(estado);
+         
 
         } catch (InterruptedException e) {
             e.printStackTrace();

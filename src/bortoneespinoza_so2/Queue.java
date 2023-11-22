@@ -5,6 +5,15 @@
  */
 package bortoneespinoza_so2;
 
+import static bortoneespinoza_so2.Interfaz.cola1_street;
+import static bortoneespinoza_so2.Interfaz.cola1_zelda;
+import static bortoneespinoza_so2.Interfaz.cola2_street;
+import static bortoneespinoza_so2.Interfaz.cola2_zelda;
+import static bortoneespinoza_so2.Interfaz.cola3_street;
+import static bortoneespinoza_so2.Interfaz.cola3_zelda;
+import static bortoneespinoza_so2.Interfaz.cola4_street;
+import static bortoneespinoza_so2.Interfaz.cola4_zelda;
+
 /**
  *
  * @author Giubo
@@ -13,9 +22,9 @@ public class Queue<T> {
 
     public Node<T> pFirst;
     public Node<T> pLast;
-    public String name;
-    public int size;
-    public int priority;
+    public static String name;
+    public static int size;
+    public static int priority;
 
     public Queue(String nombre, int priority) {
         this.pFirst = null;
@@ -183,6 +192,84 @@ public class Queue<T> {
         }
 
         return resultado.toString();
+    }
+
+    public String mostrar_cola_zelda() {
+        Node<Personaje> pAux;
+        String resultado = "";
+
+        if (isEmpty()) {
+            resultado = " está vacía";
+            System.out.println(resultado);
+        } else {
+            pAux = (Node<Personaje>) pFirst;
+
+            // Limpiar etiquetas de colas antes de mostrar las nuevas
+            while (pAux != null) {
+                // Añadir el elemento a la cola correspondiente
+                int prioridad = pAux.getData().getNivelPrioridad();
+                String info = pAux.getData().getNombre() + ",";
+
+                switch (prioridad) {
+                    case 1:
+                        Interfaz.cola1_zelda.setText(cola1_zelda.getText() + info + " ");
+                        break;
+                    case 2:
+                        Interfaz.cola2_zelda.setText(cola2_zelda.getText() + info + " ");
+                        break;
+                    case 3:
+
+                        Interfaz.cola3_zelda.setText(cola3_zelda.getText() + info + " ");
+                        break;
+                    case 4:
+                        Interfaz.cola4_zelda.setText(cola4_zelda.getText() + info + " ");
+                        break;
+                }
+
+                pAux = next((Node<T>) pAux);
+            }
+        }
+
+        return resultado;
+    }
+
+    public String mostrar_cola_street() {
+        Node<Personaje> pAux;
+        String resultado = "";
+
+        if (isEmpty()) {
+            resultado = " está vacía";
+            System.out.println(resultado);
+        } else {
+            pAux = (Node<Personaje>) pFirst;
+
+            // Limpiar etiquetas de colas antes de mostrar las nuevas
+            while (pAux != null) {
+                // Añadir el elemento a la cola correspondiente
+                int prioridad = pAux.getData().getNivelPrioridad();
+                String info = pAux.getData().getNombre() + ",";
+
+                switch (prioridad) {
+                    case 1:
+                        Interfaz.cola1_street.setText(cola1_street.getText() + info + " ");
+                        break;
+                    case 2:
+                        Interfaz.cola2_street.setText(cola2_street.getText() + info + " ");
+                        break;
+                    case 3:
+
+                        Interfaz.cola3_street.setText(cola3_street.getText() + info + " ");
+                        break;
+                    case 4:
+                        Interfaz.cola4_street.setText(cola4_street.getText() + info + " ");
+                        break;
+                }
+
+                pAux = next((Node<T>) pAux);
+            }
+        }
+
+        return resultado;
     }
 
 }

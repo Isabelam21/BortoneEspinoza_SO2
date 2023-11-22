@@ -14,7 +14,6 @@ public class Node<T> {
 
     public T data;
     public Node<T> pnext;
-    
 
     public Node(T data) {
         this.data = data; // Data del personaje
