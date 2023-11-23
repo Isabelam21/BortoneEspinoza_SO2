@@ -13,17 +13,21 @@ import java.util.Random;
  */
 public class InteligenciaArtificial {
 
-    public Queue ganadores;
+    //public Queue ganadores;
+    public static Queue<Personaje> ganadores;
     public Personaje personaje_zelda;
     public Personaje personaje_street;
     public boolean finalizado; // Variable booleana para saber si ya se termino el combate
     public static String estado;
     public static int tiempo;
+    public static int cont_zelda = 0;
+    public static int cont_street = 0;
 
     public InteligenciaArtificial() {
 
         this.finalizado = false;
         this.estado = "Esperando";
+        ganadores = new Queue<>("Ganadores", 10);
     }
 
     //Procesar batalla
@@ -55,7 +59,10 @@ public class InteligenciaArtificial {
                 Thread.sleep(2000);
                 // Ganador del combate
                 Personaje ganador = determinarGanador(zelda, streetFighter);
+                //System.out.println("Batallas ganadas de Zelda: " + cont_zelda);
+                //System.out.println("Batallas ganadas de Street: " + cont_street);
                 if (ganador != null) {
+                    ganadores.enqueue_last(ganador);
                     mostrarResultado(ganador, (ganador == zelda) ? streetFighter : zelda);
                 }
                 Administrador.desencolar_cola_actual(ganador);
@@ -105,10 +112,13 @@ public class InteligenciaArtificial {
         if (puntajeZelda > puntajeStreetFighter) {
             Interfaz.trofeo_zelda_activo();
             Administrador.desencolar_cola_actual(streetFighter);
+            cont_zelda ++;
+            //System.out.println("SUMA ZELDA");
             return zelda;
         } else if (puntajeStreetFighter > puntajeZelda) {
             Interfaz.trofeo_street_activo();
             Administrador.desencolar_cola_actual(zelda);
+            cont_street ++;
             return streetFighter;
         } else {
             // Los puntajes son iguales, usar Random para decidir el ganador 
@@ -145,5 +155,11 @@ public class InteligenciaArtificial {
         System.out.println(" ");
         System.out.println("Ganador: " + ganador.getId() + " " + ganador.getNombre());
         System.out.println("Perdedor: " + perdedor.getId() + " " + perdedor.getNombre());
+        System.out.println(" ");
+        System.out.println("--LISTA GANADORES--");
+        System.out.println("Ganadores: " + ganadores.recorrer_imprimir());
+        System.out.println(" ");
+        System.out.println("Batallas ganadas de Zelda: " + cont_zelda);
+        System.out.println("Batallas ganadas de Street: " + cont_street);
     }
 }
