@@ -82,11 +82,16 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         zeldaImg = new javax.swing.JLabel();
         batallas_street = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        scrollPane9 = new java.awt.ScrollPane();
+        cola_ganadores = new javax.swing.JLabel();
         streetName = new javax.swing.JLabel();
-        zeldaName = new javax.swing.JLabel();
         estadoBatalla = new javax.swing.JLabel();
+        zeldaName = new javax.swing.JLabel();
+        cont_zelda = new javax.swing.JLabel();
+        cont_street = new javax.swing.JLabel();
+        TituloS1 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,7 +103,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         cola3_zelda.setBackground(new java.awt.Color(255, 255, 255));
         cola3_zelda.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        cola3_zelda.setForeground(new java.awt.Color(0, 0, 0));
         cola3_zelda.setText("Cola 3");
         scrollPane5.add(cola3_zelda);
 
@@ -109,7 +113,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         cola3_street.setBackground(new java.awt.Color(255, 255, 255));
         cola3_street.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        cola3_street.setForeground(new java.awt.Color(0, 0, 0));
         cola3_street.setText("Cola 3");
         scrollPane7.add(cola3_street);
 
@@ -119,7 +122,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         cola2_street.setBackground(new java.awt.Color(255, 255, 255));
         cola2_street.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        cola2_street.setForeground(new java.awt.Color(0, 0, 0));
         cola2_street.setText("Cola 2");
         scrollPane6.add(cola2_street);
 
@@ -130,7 +132,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         cola4_street.setBackground(new java.awt.Color(255, 255, 255));
         cola4_street.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        cola4_street.setForeground(new java.awt.Color(0, 0, 0));
         cola4_street.setText("Cola refuerzo");
         scrollPane8.add(cola4_street);
 
@@ -141,7 +142,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         cola4_zelda.setBackground(new java.awt.Color(255, 255, 255));
         cola4_zelda.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        cola4_zelda.setForeground(new java.awt.Color(0, 0, 0));
         cola4_zelda.setText("Cola refuerzo");
         scrollPane2.add(cola4_zelda);
 
@@ -152,7 +152,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         cola2_zelda.setBackground(new java.awt.Color(255, 255, 255));
         cola2_zelda.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        cola2_zelda.setForeground(new java.awt.Color(0, 0, 0));
         cola2_zelda.setText("Cola 2");
         scrollPane4.add(cola2_zelda);
 
@@ -163,7 +162,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         cola1_street.setBackground(new java.awt.Color(255, 255, 255));
         cola1_street.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        cola1_street.setForeground(new java.awt.Color(0, 0, 0));
         cola1_street.setText("Cola 1");
         scrollPane3.add(cola1_street);
 
@@ -174,8 +172,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         TituloS.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         TituloS.setForeground(new java.awt.Color(0, 0, 204));
-        TituloS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/StreetFondo (2).png"))); // NOI18N
-        jPanel1.add(TituloS, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, 150));
+        TituloS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/TearsFondo (1)_1.png"))); // NOI18N
+        jPanel1.add(TituloS, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 160));
 
         trofeo_zelda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Screen-Shot-2016-12-03-at-7.59.54-PM-removebg-preview (1).png"))); // NOI18N
         jPanel1.add(trofeo_zelda, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 80, 60));
@@ -199,11 +197,10 @@ public class Interfaz extends javax.swing.JFrame {
         batallas_zelda.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
         batallas_zelda.setForeground(new java.awt.Color(255, 255, 255));
         batallas_zelda.setText("Batallas Ganadas");
-        jPanel1.add(batallas_zelda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 280, 60));
+        jPanel1.add(batallas_zelda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 160, 60));
 
         cola1_zelda.setBackground(new java.awt.Color(255, 255, 255));
         cola1_zelda.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        cola1_zelda.setForeground(new java.awt.Color(0, 0, 0));
         cola1_zelda.setText("Cola 1");
         cola1_zelda.setAutoscrolls(true);
         cola1_zelda.setOpaque(true);
@@ -225,10 +222,16 @@ public class Interfaz extends javax.swing.JFrame {
         batallas_street.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
         batallas_street.setForeground(new java.awt.Color(255, 255, 255));
         batallas_street.setText("Batallas Ganadas");
-        jPanel1.add(batallas_street, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 270, 30));
+        jPanel1.add(batallas_street, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 160, 30));
 
-        jLabel4.setText("Ganador");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, -1, -1));
+        cola_ganadores.setBackground(new java.awt.Color(255, 255, 255));
+        cola_ganadores.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        cola_ganadores.setText("ganadores");
+        cola_ganadores.setAutoscrolls(true);
+        cola_ganadores.setOpaque(true);
+        scrollPane9.add(cola_ganadores);
+
+        jPanel1.add(scrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 210, 30));
 
         streetName.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
         streetName.setForeground(new java.awt.Color(255, 255, 255));
@@ -236,21 +239,39 @@ public class Interfaz extends javax.swing.JFrame {
         streetName.setText("Nombre");
         jPanel1.add(streetName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 90, -1));
 
-        zeldaName.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
-        zeldaName.setForeground(new java.awt.Color(255, 255, 255));
-        zeldaName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        zeldaName.setText("Nombre");
-        jPanel1.add(zeldaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 180, 20));
-
         estadoBatalla.setFont(new java.awt.Font("Manjari Thin", 1, 24)); // NOI18N
         estadoBatalla.setForeground(new java.awt.Color(255, 255, 255));
         estadoBatalla.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         estadoBatalla.setText("Estado");
         jPanel1.add(estadoBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 170, -1));
 
+        zeldaName.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
+        zeldaName.setForeground(new java.awt.Color(255, 255, 255));
+        zeldaName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        zeldaName.setText("Nombre");
+        jPanel1.add(zeldaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 180, 20));
+
+        cont_zelda.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cont_zelda.setForeground(new java.awt.Color(255, 255, 255));
+        cont_zelda.setText("X");
+        jPanel1.add(cont_zelda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 40, 20));
+
+        cont_street.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cont_street.setForeground(new java.awt.Color(255, 255, 255));
+        cont_street.setText("Y");
+        jPanel1.add(cont_street, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, 40, 40));
+
+        TituloS1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        TituloS1.setForeground(new java.awt.Color(0, 0, 204));
+        TituloS1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/StreetFondo (2).png"))); // NOI18N
+        jPanel1.add(TituloS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, 150));
+
         Fondo.setForeground(new java.awt.Color(0, 0, 102));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/812075.png"))); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 750, 550));
+
+        jLabel4.setText("Ganador");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 540));
 
@@ -542,6 +563,7 @@ public class Interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel Fondo;
     private javax.swing.JLabel TituloS;
+    private javax.swing.JLabel TituloS1;
     private javax.swing.JLabel batallas_street;
     private javax.swing.JLabel batallas_zelda;
     public static javax.swing.JLabel cola1_street;
@@ -552,6 +574,9 @@ public class Interfaz extends javax.swing.JFrame {
     public static javax.swing.JLabel cola3_zelda;
     public static javax.swing.JLabel cola4_street;
     public static javax.swing.JLabel cola4_zelda;
+    public static javax.swing.JLabel cola_ganadores;
+    private javax.swing.JLabel cont_street;
+    private javax.swing.JLabel cont_zelda;
     public static javax.swing.JLabel empate;
     public static javax.swing.JLabel estadoBatalla;
     private javax.swing.JLabel jLabel1;
@@ -567,6 +592,7 @@ public class Interfaz extends javax.swing.JFrame {
     private java.awt.ScrollPane scrollPane6;
     private java.awt.ScrollPane scrollPane7;
     private java.awt.ScrollPane scrollPane8;
+    private java.awt.ScrollPane scrollPane9;
     public static javax.swing.JLabel streetImg;
     public static javax.swing.JLabel streetName;
     public static javax.swing.JLabel trofeo_street;
