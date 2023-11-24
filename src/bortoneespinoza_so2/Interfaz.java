@@ -118,7 +118,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola3_zelda.setText("Cola 3");
         scrollPane5.add(cola3_zelda);
 
-        jPanel1.add(scrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 210, 30));
+        jPanel1.add(scrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 210, 50));
 
         scrollPane7.setBackground(new java.awt.Color(255, 255, 255));
         scrollPane7.setForeground(new java.awt.Color(0, 0, 0));
@@ -128,7 +128,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola3_street.setText("Cola 3");
         scrollPane7.add(cola3_street);
 
-        jPanel1.add(scrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 200, 30));
+        jPanel1.add(scrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 200, 50));
 
         scrollPane6.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -137,7 +137,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola2_street.setText("Cola 2");
         scrollPane6.add(cola2_street);
 
-        jPanel1.add(scrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 200, 30));
+        jPanel1.add(scrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 200, 50));
 
         scrollPane8.setBackground(new java.awt.Color(255, 255, 255));
         scrollPane8.setForeground(new java.awt.Color(0, 0, 0));
@@ -147,7 +147,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola4_street.setText("Cola refuerzo");
         scrollPane8.add(cola4_street);
 
-        jPanel1.add(scrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 200, 30));
+        jPanel1.add(scrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 200, 50));
 
         scrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         scrollPane2.setForeground(new java.awt.Color(0, 0, 0));
@@ -157,7 +157,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola4_zelda.setText("Cola refuerzo");
         scrollPane2.add(cola4_zelda);
 
-        jPanel1.add(scrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 210, 30));
+        jPanel1.add(scrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 210, 50));
 
         scrollPane4.setBackground(new java.awt.Color(255, 255, 255));
         scrollPane4.setForeground(new java.awt.Color(0, 0, 0));
@@ -167,7 +167,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola2_zelda.setText("Cola 2");
         scrollPane4.add(cola2_zelda);
 
-        jPanel1.add(scrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 210, 30));
+        jPanel1.add(scrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 210, 50));
 
         scrollPane3.setBackground(new java.awt.Color(255, 255, 255));
         scrollPane3.setForeground(new java.awt.Color(0, 0, 0));
@@ -177,7 +177,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola1_street.setText("Cola 1");
         scrollPane3.add(cola1_street);
 
-        jPanel1.add(scrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 200, 30));
+        jPanel1.add(scrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 200, 50));
 
         empate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/empate.png"))); // NOI18N
         jPanel1.add(empate, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 210, 80));
@@ -218,7 +218,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola1_zelda.setOpaque(true);
         scrollPane1.add(cola1_zelda);
 
-        jPanel1.add(scrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 210, 30));
+        jPanel1.add(scrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 210, 50));
 
         vs_imagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vs_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/png-transparent-vs-showdown-vs-calligraphy-pk-duel-game-vs-thumbnail-removebg-preview (1).png"))); // NOI18N
@@ -243,7 +243,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola_ganadores.setOpaque(true);
         scrollPane9.add(cola_ganadores);
 
-        jPanel1.add(scrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 210, 30));
+        jPanel1.add(scrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 210, 50));
 
         streetName.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
         streetName.setForeground(new java.awt.Color(255, 255, 255));
