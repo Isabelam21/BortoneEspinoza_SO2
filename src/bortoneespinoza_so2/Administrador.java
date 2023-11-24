@@ -38,7 +38,7 @@ public class Administrador {
             // Asigna el valor de medidor_tiempo a la variable tiempo
             tiempo = 1;
             } else {
-            System.out.println("Tiempo en admin es:  " + tiempo);
+            System.out.println("HELLO" + tiempo);
             }
             
             Thread.sleep(tiempo*1000);
