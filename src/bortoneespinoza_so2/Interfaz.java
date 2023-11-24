@@ -100,8 +100,16 @@ public class Interfaz extends javax.swing.JFrame {
         estadoBatalla = new javax.swing.JLabel();
         zeldaName = new javax.swing.JLabel();
         cont_zelda_label = new javax.swing.JLabel();
+        P0 = new javax.swing.JLabel();
         cont_street_label = new javax.swing.JLabel();
+        P2 = new javax.swing.JLabel();
+        P3 = new javax.swing.JLabel();
+        P4 = new javax.swing.JLabel();
+        P5 = new javax.swing.JLabel();
+        P6 = new javax.swing.JLabel();
+        P7 = new javax.swing.JLabel();
         TituloS1 = new javax.swing.JLabel();
+        P1 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -200,7 +208,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/456-4568018_you-win-png-street-fighter-you-win-png-removebg-preview (3) (1).png"))); // NOI18N
         jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 130, 50));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, 130, 50));
 
         medidor_tiempo.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         medidor_tiempo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -243,7 +251,7 @@ public class Interfaz extends javax.swing.JFrame {
         cola_ganadores.setOpaque(true);
         scrollPane9.add(cola_ganadores);
 
-        jPanel1.add(scrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 210, 50));
+        jPanel1.add(scrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 210, 50));
 
         streetName.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
         streetName.setForeground(new java.awt.Color(255, 255, 255));
@@ -255,7 +263,7 @@ public class Interfaz extends javax.swing.JFrame {
         estadoBatalla.setForeground(new java.awt.Color(255, 255, 255));
         estadoBatalla.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         estadoBatalla.setText("Estado");
-        jPanel1.add(estadoBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 170, -1));
+        jPanel1.add(estadoBatalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 250, -1));
 
         zeldaName.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
         zeldaName.setForeground(new java.awt.Color(255, 255, 255));
@@ -268,15 +276,55 @@ public class Interfaz extends javax.swing.JFrame {
         cont_zelda_label.setText("X");
         jPanel1.add(cont_zelda_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 40, 20));
 
+        P0.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        P0.setForeground(new java.awt.Color(255, 255, 255));
+        P0.setText("0");
+        jPanel1.add(P0, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, -1));
+
         cont_street_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cont_street_label.setForeground(new java.awt.Color(255, 255, 255));
         cont_street_label.setText("Y");
         jPanel1.add(cont_street_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 40, 40));
 
+        P2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        P2.setForeground(new java.awt.Color(255, 255, 255));
+        P2.setText("1");
+        jPanel1.add(P2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+
+        P3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        P3.setForeground(new java.awt.Color(255, 255, 255));
+        P3.setText("1");
+        jPanel1.add(P3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, -1, -1));
+
+        P4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        P4.setForeground(new java.awt.Color(255, 255, 255));
+        P4.setText("2");
+        jPanel1.add(P4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
+
+        P5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        P5.setForeground(new java.awt.Color(255, 255, 255));
+        P5.setText("2");
+        jPanel1.add(P5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, -1, -1));
+
+        P6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        P6.setForeground(new java.awt.Color(255, 255, 255));
+        P6.setText("R");
+        jPanel1.add(P6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
+
+        P7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        P7.setForeground(new java.awt.Color(255, 255, 255));
+        P7.setText("R");
+        jPanel1.add(P7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 450, -1, -1));
+
         TituloS1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         TituloS1.setForeground(new java.awt.Color(0, 0, 204));
         TituloS1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/StreetFondo (2).png"))); // NOI18N
         jPanel1.add(TituloS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, -1, 150));
+
+        P1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        P1.setForeground(new java.awt.Color(255, 255, 255));
+        P1.setText("0");
+        jPanel1.add(P1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         Fondo.setForeground(new java.awt.Color(0, 0, 102));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/812075.png"))); // NOI18N
@@ -602,6 +650,14 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel Fondo;
+    private javax.swing.JLabel P0;
+    private javax.swing.JLabel P1;
+    private javax.swing.JLabel P2;
+    private javax.swing.JLabel P3;
+    private javax.swing.JLabel P4;
+    private javax.swing.JLabel P5;
+    private javax.swing.JLabel P6;
+    private javax.swing.JLabel P7;
     private javax.swing.JLabel TituloS;
     private javax.swing.JLabel TituloS1;
     private javax.swing.JLabel batallas_street;
