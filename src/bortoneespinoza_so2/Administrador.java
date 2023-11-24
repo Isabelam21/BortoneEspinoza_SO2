@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static bortoneespinoza_so2.Interfaz.tiempo;
-import static bortoneespinoza_so2.Interfaz.medidor_tiempo;
+//import static bortoneespinoza_so2.Interfaz.medidor_tiempo;
 
 public class Administrador {
 
