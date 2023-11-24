@@ -24,7 +24,7 @@ public class Personaje {
     public boolean hadoken;
     public boolean trifuerza;
     public int puntaje;
-    public static final String[] ZELDA_NAMES = {"Link", "Lana", "Princess Zelda", "Midna", "Danuria"};
+    public static final String[] ZELDA_NAMES = {"Link", "Lana", "Princess Zelda", "Midna", "Darunia"};
     public static final String[] STREET_FIGHTER_NAMES = {"Ryu", "Sagat", "Zangief", "Cammy", "Fei Long"};
 
     public Personaje(int id, int game, String name) {

@@ -7,6 +7,8 @@ package bortoneespinoza_so2;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static bortoneespinoza_so2.Interfaz.tiempo;
+import static bortoneespinoza_so2.Interfaz.medidor_tiempo;
 
 public class Administrador {
 
@@ -29,7 +31,20 @@ public class Administrador {
     public Administrador() {
         try {
             // Inicializa las colas
-            Thread.sleep(2000);
+            
+            
+            if (tiempo == 0) {
+            System.out.println("TIEMPO EN ADMIN ES:  " + tiempo);
+            // Asigna el valor de medidor_tiempo a la variable tiempo
+            tiempo = 1;
+            } else {
+            System.out.println("Tiempo en admin es:  " + tiempo);
+            }
+            
+            Thread.sleep(tiempo*1000);
+            
+            //int tiempo = (int) medidor_tiempo.getValue();
+            //Thread.sleep(2000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
         }

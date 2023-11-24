@@ -12,6 +12,11 @@ import static bortoneespinoza_so2.Administrador.colaZeldaNivel1;
 import static bortoneespinoza_so2.Administrador.colaZeldaNivel2;
 import static bortoneespinoza_so2.Administrador.colaZeldaNivel3;
 import static bortoneespinoza_so2.Administrador.colaZeldaNivel4;
+import static bortoneespinoza_so2.InteligenciaArtificial.ganadores;
+import static bortoneespinoza_so2.InteligenciaArtificial.cont_zelda;
+import static bortoneespinoza_so2.InteligenciaArtificial.cont_street;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -24,12 +29,19 @@ public class Interfaz extends javax.swing.JFrame {
     /**
      * Creates new form Interfaz
      */
+    
+    public static int tiempo;
+    
     public Interfaz() {
 
+        
         int i = 0;
 
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        //int tiempo = (int) medidor_tiempo.getValue();
+        //System.out.println("TIEMPO: " + tiempo);
 
         //iniciar 20 hilos, 10 y 10. POR HACER 
         while (true) {
@@ -74,7 +86,7 @@ public class Interfaz extends javax.swing.JFrame {
         trofeo_street = new javax.swing.JLabel();
         streetImg = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        medior_tiempo = new javax.swing.JSpinner();
+        medidor_tiempo = new javax.swing.JSpinner();
         batallas_zelda = new javax.swing.JLabel();
         scrollPane1 = new java.awt.ScrollPane();
         cola1_zelda = new javax.swing.JLabel();
@@ -87,8 +99,8 @@ public class Interfaz extends javax.swing.JFrame {
         streetName = new javax.swing.JLabel();
         estadoBatalla = new javax.swing.JLabel();
         zeldaName = new javax.swing.JLabel();
-        cont_zelda = new javax.swing.JLabel();
-        cont_street = new javax.swing.JLabel();
+        cont_zelda_label = new javax.swing.JLabel();
+        cont_street_label = new javax.swing.JLabel();
         TituloS1 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -190,9 +202,9 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 130, 50));
 
-        medior_tiempo.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        medior_tiempo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        jPanel1.add(medior_tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 40, 30));
+        medidor_tiempo.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        medidor_tiempo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel1.add(medidor_tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 40, 30));
 
         batallas_zelda.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
         batallas_zelda.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,7 +234,7 @@ public class Interfaz extends javax.swing.JFrame {
         batallas_street.setFont(new java.awt.Font("Manjari Thin", 1, 18)); // NOI18N
         batallas_street.setForeground(new java.awt.Color(255, 255, 255));
         batallas_street.setText("Batallas Ganadas");
-        jPanel1.add(batallas_street, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 160, 30));
+        jPanel1.add(batallas_street, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 160, 30));
 
         cola_ganadores.setBackground(new java.awt.Color(255, 255, 255));
         cola_ganadores.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
@@ -251,15 +263,15 @@ public class Interfaz extends javax.swing.JFrame {
         zeldaName.setText("Nombre");
         jPanel1.add(zeldaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 180, 20));
 
-        cont_zelda.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        cont_zelda.setForeground(new java.awt.Color(255, 255, 255));
-        cont_zelda.setText("X");
-        jPanel1.add(cont_zelda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 40, 20));
+        cont_zelda_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cont_zelda_label.setForeground(new java.awt.Color(255, 255, 255));
+        cont_zelda_label.setText("X");
+        jPanel1.add(cont_zelda_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 40, 20));
 
-        cont_street.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        cont_street.setForeground(new java.awt.Color(255, 255, 255));
-        cont_street.setText("Y");
-        jPanel1.add(cont_street, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, 40, 40));
+        cont_street_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cont_street_label.setForeground(new java.awt.Color(255, 255, 255));
+        cont_street_label.setText("Y");
+        jPanel1.add(cont_street_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 40, 40));
 
         TituloS1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         TituloS1.setForeground(new java.awt.Color(0, 0, 204));
@@ -316,6 +328,16 @@ public class Interfaz extends javax.swing.JFrame {
             if (Administrador.fin) {
                 break;
             }
+            
+            int tiempo = (int) medidor_tiempo.getValue();
+            System.out.println("TIEMPO: " + tiempo);
+            try {
+                System.out.println("TIEMPO SE ACTUALIZA");
+                Thread.sleep(tiempo*1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
             Interfaz.cola1_zelda.setText("");
             Interfaz.cola1_street.setText("");
 
@@ -339,6 +361,14 @@ public class Interfaz extends javax.swing.JFrame {
 
             colaZeldaNivel4.mostrar_cola_zelda();
             colaStreetFighterNivel4.mostrar_cola_street();
+            
+            Interfaz.cola_ganadores.setText("");
+            ganadores.mostrar_cola_ganadores();
+            
+            cont_street_label.setText(String.valueOf(cont_street));
+            cont_zelda_label.setText(String.valueOf(cont_zelda));
+            
+            
 
             System.out.println("----- RONDA" + rondas + "------");
 
@@ -371,6 +401,14 @@ public class Interfaz extends javax.swing.JFrame {
 
             colaZeldaNivel4.mostrar_cola_zelda();
             colaStreetFighterNivel4.mostrar_cola_street();
+            
+            Interfaz.cola_ganadores.setText("");
+            ganadores.mostrar_cola_ganadores();
+           
+            
+            //cont_street_label.setText(String.valueOf(cont_street));
+            //cont_zelda_label.setText(String.valueOf(cont_zelda));
+            
             empate_desactivo();
 
         }
@@ -551,6 +589,8 @@ public class Interfaz extends javax.swing.JFrame {
             streetName.setText(name);
             streetImg.setIcon(new ImageIcon("src//Imagenes//" + name + ".jpg"));
             streetImg.setVisible(true);
+            cont_street_label.setText(String.valueOf(cont_street));
+            cont_zelda_label.setText(String.valueOf(cont_zelda));
         }
     }
 
@@ -575,15 +615,15 @@ public class Interfaz extends javax.swing.JFrame {
     public static javax.swing.JLabel cola4_street;
     public static javax.swing.JLabel cola4_zelda;
     public static javax.swing.JLabel cola_ganadores;
-    private javax.swing.JLabel cont_street;
-    private javax.swing.JLabel cont_zelda;
+    public static javax.swing.JLabel cont_street_label;
+    public static javax.swing.JLabel cont_zelda_label;
     public static javax.swing.JLabel empate;
     public static javax.swing.JLabel estadoBatalla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner medior_tiempo;
+    public static javax.swing.JSpinner medidor_tiempo;
     private java.awt.ScrollPane scrollPane1;
     private java.awt.ScrollPane scrollPane2;
     private java.awt.ScrollPane scrollPane3;

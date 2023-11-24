@@ -272,4 +272,27 @@ public class Queue<T> {
         return resultado;
     }
 
+    public String mostrar_cola_ganadores() {
+        Node<Personaje> pAux;
+        String resultado = "";
+
+        if (isEmpty()) {
+            resultado = "No hay ganadores";
+            System.out.println(resultado);
+        } else {
+            pAux = (Node<Personaje>) pFirst;
+
+            // Limpiar etiquetas de colas antes de mostrar las nuevas
+            while (pAux != null) {
+                // Añadir el elemento a la cola correspondiente
+                String info = pAux.getData().getId() + " " + pAux.getData().getNombre() + ",";
+
+                Interfaz.cola_ganadores.setText(Interfaz.cola_ganadores.getText() + info + " ");
+
+                pAux = next((Node<T>) pAux);
+            }
+        }
+
+        return resultado;
+    }
 }
